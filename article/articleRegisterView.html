@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>article-view</title>
+    <title>article-regi-view</title>
     <link rel="stylesheet" href="/css/articles.css">
 </head>
 
 <body>
 
-    <header>
+
+    <head>
         <div id="header"></div>
-    </header>
+    </head>
     <div class="article-navi">
         <div class="article-innavi">
             <a href="#">홈</a> 〉 <a href="#">공지상황</a>
@@ -20,20 +21,20 @@
     </div>
     <main class="article-main">
 
-        <aside id="aside">
+        <aside id="regiAside">
+
 
         </aside>
 
         <div class="view-box">
             <div class="view-coment">
-                <h3>전체</h3>
-                <p>공지사항 전체 내용 입니다.</p>
+                <h3>회원</h3>
+                <p>회원돤련 자주묻는 질문 입니다.</p>
             </div>
             <table class="view-div">
                 <div class="title-box">
                     <tr>
-                        <td class="view-title">공지사항: 2024년 하반기 학사 일정 안내<br>
-                            <span class="view-data">2024.10.10</span> <!-- 날짜 추가 -->
+                        <td class="view-title">Q. 개인회원과 법인회원에 차이가 있나요<br>
                         </td>
                     </tr>
                 </div>
@@ -110,7 +111,7 @@
             .catch(error => console.error('Error loading header:', error));
 
 
-        fetch('../aside.html') // 사이드 파일 경로
+        fetch('../regiAside.html') // 사이드 파일 경로
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -118,9 +119,9 @@
                 return response.text();
             })
             .then(data => {
-                document.getElementById('aside').innerHTML = data;
+                document.getElementById('regiAside').innerHTML = data;
             })
-            .catch(error => console.error('Error loading aside:', error));
+            .catch(error => console.error('Error loading regiAside:', error));
 
 
 
